@@ -1,0 +1,53 @@
+name: workout_app
+description: "Aplicación de control de entrenamiento con Clean Architecture y Provider."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Gestión de estado
+  provider: ^6.1.1
+  # Persistencia de datos local
+  shared_preferences: ^2.2.2
+  # Iconos adicionales (opcional)
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Registro de imágenes
+  assets:
+    - assets/workouts.json
+    # Día 1
+    - assets/sentadilla_bulgara.jpeg
+    - assets/Zancadas_Lunges.jpeg
+    - assets/extensiones_cuadriceps.jpeg
+    - assets/peso_muerto_rumano.jpeg
+    - assets/Press_militar.jpeg
+    - assets/elevaciones_laterales.jpeg
+    
+    # Día 2
+    - assets/dominadas_supino.jpeg
+    - assets/curl_barra.jpeg
+    - assets/fondos_banco.jpeg
+    - assets/remo_mancuerda.jpeg
+    - assets/curl_martillo.jpeg
+    - assets/extensiones_triceps.jpeg
+    
+    # Día 3
+    - assets/pres_banca.jpeg
+    - assets/aperturas_mancuerdas.jpeg
+    - assets/encogimientos.jpeg
+    - assets/remo_menton.jpeg
+    - assets/curl_biceps.jpeg
+    - assets/press_frances.jpeg

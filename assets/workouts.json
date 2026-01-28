@@ -1,0 +1,134 @@
+{
+    "1": [
+        {
+            "id": "1_1",
+            "name": "Sentadilla Búlgara",
+            "sets": "4",
+            "reps": "8-10",
+            "imagePath": "assets/sentadilla_bulgara.jpeg"
+        },
+        {
+            "id": "1_2",
+            "name": "Zancadas Lunges",
+            "sets": "3",
+            "reps": "12",
+            "imagePath": "assets/Zancadas_Lunges.jpeg"
+        },
+        {
+            "id": "1_3",
+            "name": "Extensiones Cuádriceps",
+            "sets": "4",
+            "reps": "15",
+            "imagePath": "assets/extensiones_cuadriceps.jpeg"
+        },
+        {
+            "id": "1_4",
+            "name": "Peso Muerto Rumano",
+            "sets": "4",
+            "reps": "10",
+            "imagePath": "assets/peso_muerto_rumano.jpeg"
+        },
+        {
+            "id": "1_5",
+            "name": "Press Militar Sentado",
+            "sets": "4",
+            "reps": "8-10",
+            "imagePath": "assets/Press_militar.jpeg"
+        },
+        {
+            "id": "1_6",
+            "name": "Elevaciones Laterales",
+            "sets": "4",
+            "reps": "15",
+            "imagePath": "assets/elevaciones_laterales.jpeg"
+        }
+    ],
+    "2": [
+        {
+            "id": "2_1",
+            "name": "Dominadas Supino",
+            "sets": "3",
+            "reps": "8",
+            "imagePath": "assets/dominadas_supino.jpeg"
+        },
+        {
+            "id": "2_2",
+            "name": "Curl Barra",
+            "sets": "3",
+            "reps": "12",
+            "imagePath": "assets/curl_barra.jpeg"
+        },
+        {
+            "id": "2_3",
+            "name": "Fondos Banco",
+            "sets": "3",
+            "reps": "15",
+            "imagePath": "assets/fondos_banco.jpeg"
+        },
+        {
+            "id": "2_4",
+            "name": "Remo Mancuerna",
+            "sets": "4",
+            "reps": "10",
+            "imagePath": "assets/remo_mancuerda.jpeg"
+        },
+        {
+            "id": "2_5",
+            "name": "Curl Martillo",
+            "sets": "3",
+            "reps": "12",
+            "imagePath": "assets/curl_martillo.jpeg"
+        },
+        {
+            "id": "2_6",
+            "name": "Extensiones Tríceps Tras Nuca",
+            "sets": "3",
+            "reps": "12",
+            "imagePath": "assets/extensiones_triceps.jpeg"
+        }
+    ],
+    "3": [
+        {
+            "id": "3_1",
+            "name": "Press Banca Mancuernas",
+            "sets": "4",
+            "reps": "10",
+            "imagePath": "assets/pres_banca.jpeg"
+        },
+        {
+            "id": "3_2",
+            "name": "Aperturas Mancuernas",
+            "sets": "3",
+            "reps": "12",
+            "imagePath": "assets/aperturas_mancuerdas.jpeg"
+        },
+        {
+            "id": "3_3",
+            "name": "Encogimientos (Shrugs)",
+            "sets": "4",
+            "reps": "15",
+            "imagePath": "assets/encogimientos.jpeg"
+        },
+        {
+            "id": "3_4",
+            "name": "Remo al Mentón",
+            "sets": "3",
+            "reps": "12",
+            "imagePath": "assets/remo_menton.jpeg"
+        },
+        {
+            "id": "3_5",
+            "name": "Curl Bíceps Barra",
+            "sets": "3",
+            "reps": "10",
+            "imagePath": "assets/curl_biceps.jpeg"
+        },
+        {
+            "id": "3_6",
+            "name": "Tríceps Press Francés",
+            "sets": "3",
+            "reps": "12",
+            "imagePath": "assets/press_frances.jpeg"
+        }
+    ]
+}
