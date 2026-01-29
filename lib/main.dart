@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:workout_app/presentation/screens/splash_screen.dart';
 import 'providers/workout_provider.dart';
-import 'presentation/home_screen.dart';
 
 void main() {
   runApp(
@@ -9,8 +9,9 @@ void main() {
       create: (context) => WorkoutProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
-        home: const HomeScreen(),
+        theme: ThemeData(primarySwatch: Colors.blueGrey, useMaterial3: true),
+        // CAMBIO AQUÍ:
+        home: const SplashScreen(),
       ),
     ),
   );

@@ -36,6 +36,7 @@ flutter:
 
   # Registro de imágenes
   assets:
+    - assets/splash_bg.png
     - assets/workouts.json
     # Día 1
     - assets/sentadilla_bulgara.jpeg
