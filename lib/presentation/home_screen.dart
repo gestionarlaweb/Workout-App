@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../providers/workout_provider.dart';
 import '../widgets/workout_day_list.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,6 +17,26 @@ class HomeScreen extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.2),
           ),
           centerTitle: true,
+          actions: [
+            Consumer<WorkoutProvider>(
+              builder: (context, provider, child) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 20.0),
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    child: provider.isSaving
+                        ? const Icon(
+                            Icons.save_as,
+                            key: ValueKey('saving'),
+                            color: Colors.greenAccent,
+                            size: 28,
+                          )
+                        : const SizedBox.shrink(key: ValueKey('not_saving')),
+                  ),
+                );
+              },
+            ),
+          ],
           bottom: const TabBar(
             indicatorColor: Colors.orangeAccent,
             indicatorWeight: 4,

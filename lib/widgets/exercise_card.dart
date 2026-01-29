@@ -59,36 +59,44 @@ class ExerciseCard extends StatelessWidget {
   Widget _buildInputFields(BuildContext context) {
     return Row(
       children: [
+        // Campo de Repeticiones
         Expanded(
           child: TextFormField(
-            key: Key("${exercise.id}_reps"),
+            key: Key("${exercise.id}_reps_field"),
             initialValue: exercise.reps,
             decoration: const InputDecoration(
               labelText: 'Reps reales',
               border: OutlineInputBorder(),
             ),
-            onChanged: (val) => context.read<WorkoutProvider>().updateExercise(
-                  day,
-                  exercise.id,
-                  reps: val,
-                ),
+            onChanged: (val) {
+              // Guardado inmediato al cambiar
+              context.read<WorkoutProvider>().updateExercise(
+                    day,
+                    exercise.id,
+                    reps: val,
+                  );
+            },
           ),
         ),
         const SizedBox(width: 10),
+        // Campo de Peso
         Expanded(
           child: TextFormField(
-            key: Key("${exercise.id}_weight"),
+            key: Key("${exercise.id}_weight_field"),
             initialValue: exercise.weight,
             decoration: const InputDecoration(
               labelText: 'Peso (kg)',
               border: OutlineInputBorder(),
             ),
             keyboardType: TextInputType.number,
-            onChanged: (val) => context.read<WorkoutProvider>().updateExercise(
-                  day,
-                  exercise.id,
-                  weight: val,
-                ),
+            onChanged: (val) {
+              // Guardado inmediato al cambiar
+              context.read<WorkoutProvider>().updateExercise(
+                    day,
+                    exercise.id,
+                    weight: val,
+                  );
+            },
           ),
         ),
       ],

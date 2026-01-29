@@ -7,9 +7,11 @@ import '../domain/exercise.dart';
 class WorkoutProvider with ChangeNotifier {
   Map<int, List<Exercise>> _days = {};
   bool _isLoading = true;
+  bool _isSaving = false;
 
   Map<int, List<Exercise>> get days => _days;
   bool get isLoading => _isLoading;
+  bool get isSaving => _isSaving;
 
   WorkoutProvider() {
     init();
@@ -20,7 +22,7 @@ class WorkoutProvider with ChangeNotifier {
       await _loadFromAssets();
       await _loadPersistedData();
     } catch (e) {
-      debugPrint("Error inicializando datos: $e");
+      debugPrint("❌ Error en la inicialización: $e");
     } finally {
       _isLoading = false;
       notifyListeners();
@@ -30,7 +32,6 @@ class WorkoutProvider with ChangeNotifier {
   Future<void> _loadFromAssets() async {
     final String response = await rootBundle.loadString('assets/workouts.json');
     final data = json.decode(response) as Map<String, dynamic>;
-
     _days = data.map((key, value) {
       return MapEntry(
         int.parse(key),
@@ -59,16 +60,32 @@ class WorkoutProvider with ChangeNotifier {
 
   void updateExercise(int day, String id, {String? weight, String? reps}) {
     if (_days[day] == null) return;
-    final ex = _days[day]!.firstWhere((e) => e.id == id);
-    if (weight != null) ex.weight = weight;
-    if (reps != null) ex.reps = reps;
-    _saveToDisk();
-    notifyListeners();
+    try {
+      final ex = _days[day]!.firstWhere((e) => e.id == id);
+      if (weight != null) ex.weight = weight;
+      if (reps != null) ex.reps = reps;
+      _saveToDisk();
+    } catch (e) {
+      debugPrint("❌ Error al actualizar memoria: $e");
+    }
   }
 
   Future<void> _saveToDisk() async {
-    final prefs = await SharedPreferences.getInstance();
-    final data = _days.values.expand((l) => l.map((e) => e.toMap())).toList();
-    prefs.setString('workout_persistence', json.encode(data));
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final allExercises =
+          _days.values.expand((list) => list).map((e) => e.toMap()).toList();
+      await prefs.setString('workout_persistence', json.encode(allExercises));
+
+      _isSaving = true;
+      notifyListeners();
+
+      Future.delayed(const Duration(milliseconds: 1000), () {
+        _isSaving = false;
+        notifyListeners();
+      });
+    } catch (e) {
+      debugPrint("❌ Error crítico al guardar: $e");
+    }
   }
 }
